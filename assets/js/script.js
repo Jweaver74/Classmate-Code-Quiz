@@ -4,6 +4,7 @@ var timeLeft = 60;
 var timerId;
 var timerEl = document.getElementById("timer");
 var startButton = document.getElementById("start-btn");
+var nextButton = document.getElementById("next-btn");
 var answerButtonEl = document.getElementById("answer-btn");
 var startContainerEl = document.getElementById("start-container");
 var questionContainerEl = document.getElementById("question-container");
@@ -12,7 +13,7 @@ var shuffledQuestions, currentQuestionIndex;
 
 
 
-startButton.addEventListener("click", startgame);
+startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
     currentQuestionIndex  ++
     setNextQuestion()
@@ -28,7 +29,7 @@ function timeTick(){
 
 
 function startGame() {
-    timerID = setInterval(timeTick, 1000);
+    timerId = setInterval(timeTick, 1000);
     startContainerEl.classList.add("hide");
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -72,7 +73,7 @@ function selectAnswer(e){
     var selectButton = e.target;
     var correct = selectButton.dataset.correct;
     checkAnswerEl.classList.remove("hide");
-    
+
     if(correct){
         checkAnswerEl.innerHTML = "You are correct";
     }else {
