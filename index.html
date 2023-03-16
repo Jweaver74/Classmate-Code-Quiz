@@ -25,6 +25,9 @@
             Every wrong answer will cost you 10 seconds. Save your score using your intials.
             The time left is your score.
         </p>
+        <div class="controls">
+            <button id="start-btn" class="start-btn">Start Quiz</button>
+        </div>
     </section>
 
     <section id=" question-container" class="hide">
@@ -37,9 +40,22 @@
         </div>
         <h2 id="chech-answer" class="correct-wrong hide"></h2>
         <div class="controls">
-            <button id="next-btn" class="next-btn hide"></button>
+            <button id="next-btn" class="next-btn hide">Next</button>
         </div>
     </section>
+
+    <section id="hightscores" class="highscores-container hide">
+        <div id="high-scores">
+            <h1 class="centered">Leaderboard</h1>
+            <div id="highscore" class="highscore-list"></div>
+            <div class="controls">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
 
     
 
