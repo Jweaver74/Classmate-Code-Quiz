@@ -85,3 +85,32 @@ function selectAnswer(e){
             timeLeft -=10;
         }   
 }
+
+Array.from(answerButtonEl.children).forEach(button => {
+    setStatusClass(button, button.dataset.correct);
+})
+
+if (shuffledQuestions.length > currentQuestionIndex + 1){
+    nextButton.classList.remove("hide");
+}else{
+    saveButton.classList.remove("hide");
+    saveScore();
+}
+
+function setStatusClass(element, correct);
+clearStatusClass(element);
+if (correct){
+    element.classList.add("correct");
+}else{
+    element.classList.add("wrong")
+};
+
+function saveScore(){
+    clearInterval(timerId);
+    timerEl.textContent = "Time: " + timeLeft;
+    setTimeout(function (){
+        questionContainerEl.classList.add("hide");
+        document.getElementById("score-container").classList.remove("hide");
+        document.getElementById("your-score").textContent = "Final Score" + timeLeft;
+    },2000)
+};
