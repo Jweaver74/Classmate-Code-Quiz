@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 body{
     font-family: 'Times New Roman', Times, serif;
     line-height: 2;
@@ -16,6 +18,34 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 25px 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.centered{
+    text-align: center;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.scores a, .timer{
+    font-size: 30px;
+}
+
+.scores a{
+    color: orange;
+    cursor: pointer;
+}
+
+.scores a:hover{
+    color: yellow;
 }
 
 .start-quiz{
@@ -33,6 +63,13 @@ h2{
    text-align: center;
 }
 
+.btn{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
 button{
     font-family: 'Times New Roman', Times, serif;
     width: auto;
@@ -48,4 +85,52 @@ button{
 button:hover{
     transition: 0.7s;
    background-color: grey;
+}
+
+.hide{
+    display: none;
+}
+
+.btn-correct{
+    background-color: gray;
+}
+
+.btn-wrong{
+    background-color: aqua;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+input[type="text"]{
+    padding:10px;
+    margin: 8px 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+.highscore{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.name-div, .score-div{
+    flex:1 35%;
+    padding: 10px 0;
+    border: 1px solid orange;
+}
+
+@media screen and (max-width: 550px) {
+    .btn-grid{
+        grid-template-columns: repeat(1, auto);
+        gap: 0;
+        margin: 0;
+    }
 }

@@ -1,16 +1,31 @@
-
+var questions = [
+    {
+        question: "Commonly used data types DO NOT include:",
+        answers:[
+            {text: "strings", correct: false},
+            {text: "booleans", correct: false},
+            {text: "alerts", correct: true},
+            {text: "numbers", correct: false}
+        ]
+    }
+]
 
 var timeLeft = 60;
 var timerId;
 var timerEl = document.getElementById("timer");
 var startButton = document.getElementById("start-btn");
 var nextButton = document.getElementById("next-btn");
-var answerButtonsEl = document.getElementById("answer-btn");
-var startContainerEl = document.getElementById("start-container");
 var questionContainerEl = document.getElementById("question-container");
+var startContainerEl = document.getElementById("start-container");
+var questionEl = document.getElementById("question");
+var answerButtonsEl = document.getElementById("answer-btn");
 var checkAnswerEl = document.getElementById("check-answer");
 var initialsField = document.getElementById("player-name");
 var scoreField = document.getElementById("player-score");
+var viewHighScores = document.getElementById("highscores-link");
+var submitButton = document.getElementById("submit-btn");
+var restartButton = document.getElementById("restart-btn");
+var clearScorebutton = document.getElementById("clear-btn");
 var scores = JSON.parse(localStorage.getItem("scores")) || [];
 var shuffledQuestions, currentQuestionIndex;
 
@@ -18,7 +33,7 @@ var shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
-    currentQuestionIndex  ++
+    currentQuestionIndex++
     setNextQuestion()
 });
 
@@ -59,16 +74,16 @@ question.answers.forEach(answer =>{
         button.dataset.correct = answer.correct;
     }
     button.addEventListener("click", selectAnswer);
-    answerButtonEl.appendChild(button);
+    answerButtonsEl.appendChild(button);
 })
 };
 
 function resetstate(){
     nextButton.classList.add("hide");
     checkAnswerEl.classList.add("hide");
-    while(answerButtonEl.firstChild){
-        answerButtonEl.removeChild;
-        (answerButtonEl.firstChild);
+    while(answerButtonsEl.firstChild){
+        answerButtonsEl.removeChild;
+        (answerButtonsEl.firstChild);
     }
 };
 
@@ -88,10 +103,10 @@ function selectAnswer(e){
             timeLeft -=10;
         }   
 }
-
 Array.from(answerButtonsEl.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct);
+    setStatusClass(button, button.dataset.correct)
 })
+
 
 if (shuffledQuestions.length > currentQuestionIndex + 1){
     nextButton.classList.remove("hide");
@@ -101,7 +116,7 @@ if (shuffledQuestions.length > currentQuestionIndex + 1){
 }
 
 function setStatusClass(element, correct) {
-clearStatusClass(element);
+setStatusClass(element);
 if (correct){
     element.classList.add("correct");
 }else{
@@ -120,18 +135,18 @@ function saveScore(){
 };
 
 var loadScores = function(){
-    if (!savedScores){
+    if (!saveScore){
         return false;
     }
-    savedScores = JSON.parse(savedScores);
+    savedScores = JSON.parse(saveScore);
     var initials = document.querySelector("#initials-field").value;
     var newScore = {
         score: timeLeft, initials: initials
     }
-    savedScores.push(newScore);
+    saveScore.push(newScore);
     console.log(savedScores);
 
-    savedScores.forEach(score => {
+    saveScore.forEach(score => {
         initialsField.innerText = score.initials;
         scoreField.innerText = score.score;
     })
@@ -142,7 +157,7 @@ function showHighScores(initials){
     document.getElementById("score-container").classList.add("hide");
     startContainerEl.classList.add("hide");
     questionContainerEl.classList.add("hide");
-    if(typeof intitials == "string"){
+    if(typeof initials == "string"){
         var score = {
             initials, timeLeft
         }
@@ -163,4 +178,17 @@ function showHighScores(initials){
        highScoreEl.appendChild(div2);
     }
     localStorage.setItem("scores", JSON.stringify(scores));
-}:
+};
+
+viewHighScores.addEventListener("click", showHighScores);
+
+submitButton.addEventListener("click", function (event){
+    event.preventDefault();
+    var initials = document.querySelector("#intials-field").value;
+    showHighScores(initials);
+});
+
+restartButton.addEventListener("click", function (){
+    localStorage.clear();
+    document.getElementById("highscore").innerHTML = ""
+});
