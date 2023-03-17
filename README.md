@@ -22,4 +22,7 @@ website
 
 
 
-## creditscd 
+## credits
+BCS learning Assitant- working on errors that i just cant figure out.
+SMU tutor- Assisting with Javascript.
+Good friend & a Senior developer for helping along the way with the Javascript.
