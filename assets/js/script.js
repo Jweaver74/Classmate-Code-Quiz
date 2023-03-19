@@ -53,7 +53,7 @@ function setNextQuestion() {
 function showQuestion(question) {
     questionEl.innerText = question.question
     question.answers.forEach(answer => {
-        var button = document.createElement("button")
+        const button = document.createElement("button")
         button.innerText = answer.text
         button.classList.add("btn")
         if (answer.correct) {
@@ -76,8 +76,8 @@ function resetState() {
 
 
 function selectAnswer(e) {
-    var selectedButton = e.target;
-    var correct = selectedButton.dataset.correct;
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
     checkAnswerEl.classList.remove("hide")
     if (correct) {
         checkAnswerEl.innerHTML = "You got it right!";
@@ -130,21 +130,21 @@ function saveScore() {
 };
 
 
-var loadScores = function () {
-    if (!savedScores) {
+const loadScores = function () {
+    if (!saveScore) {
         return false;
     }
 
-    savedScores = JSON.parse(savedScores);
-    var initials = document.querySelector("#initials-field").value;
-    var newScore = {
+    saveScore = JSON.parse(savedScores);
+    const initials = document.querySelector("#initials-field").value;
+    const newScore = {
         score: timeLeft,
         initials: initials
     }
-    savedScores.push(newScore);
+    saveScore.push(newScore);
     console.log(savedScores)
 
-    savedScores.forEach(score => {
+    saveScore.forEach(score => {
         initialsField.innerText = score.initials
         scoreField.innerText = score.score
     })
@@ -156,19 +156,19 @@ function showHighScores(initials) {
     startContainerEl.classList.add("hide");
     questionContainerEl.classList.add("hide");
     if (typeof initials == "string") {
-        var score = {
+        const score = {
             initials, timeLeft
         }
         scores.push(score)
     }
 
-    var highScoreEl = document.getElementById("highscore");
+    const highScoreEl = document.getElementById("highscore");
     highScoreEl.innerHTML = "";
     for (i = 0; i < scores.length; i++) {
-        var div1 = document.createElement("div");
+        const div1 = document.createElement("div");
         div1.setAttribute("class", "name-div");
         div1.innerText = scores[i].initials;
-        var div2 = document.createElement("div");
+        const div2 = document.createElement("div");
         div2.setAttribute("class", "score-div");
         div2.innerText = scores[i].timeLeft;
 
@@ -185,7 +185,7 @@ viewHighScores.addEventListener("click", showHighScores);
 
 submitButton.addEventListener("click", function (event) {
     event.preventDefault()
-    var initials = document.querySelector("#initials-field").value;
+    const initials = document.querySelector("#initials-field").value;
     showHighScores(initials);
 });
 
