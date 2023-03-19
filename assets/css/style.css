@@ -7,7 +7,7 @@
 
 
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5;
     width: 60%;
     margin: 0 auto;
@@ -31,28 +31,30 @@ header{
 
 .scores a, .timer{
     font-size: 20px;
+    color: blue;
 }
 
 .scores a{
-    color: orange;
+    color: blue;
     cursor: pointer;
 }
 
 .scores a:hover{
-    color: yellow;
+    color: orange;
 }
 
 .start-quiz{
-    color: orange;
+    color: blue;
 }
 
 h1{
     margin-bottom: 10px;
+    color: blue;
 }
 
 h2{
-    color: orange;
-    border-top: 5px solid red;
+    color: orangered;
+    border-top: 5px solid blue;
     margin: 20px 0;
    text-align: center;
 }
@@ -62,35 +64,31 @@ h2{
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
+    color: white;
 }
 
 button{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     width: auto;
     overflow: visible;
-    padding: 10px;
+    padding: 25px;
     background-color: greenyellow;
     border-radius: 10px;
     margin: 10px;
     color: blue;
     cursor: pointer;
+    border-radius: 12px;
+    font-size: 20px;
 }
 
 button:hover{
     transition: 0.7s;
-   background-color: grey;
+   
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
 }
 
 .hide{
     display: none;
-}
-
-.btn-correct{
-    background-color: gray;
-}
-
-.btn-wrong{
-    background-color: aqua;
 }
 
 .controls{
@@ -106,7 +104,10 @@ input[type="text"]{
     border: 1px solid black;
     border-radius: 4px;
     box-sizing: border-box;
+}
 
+h3{
+    color: blue;
 }
 
 .highscore {
@@ -118,7 +119,7 @@ input[type="text"]{
 .name-div, .score-div{
     flex: 1 35%;
     padding: 10px 0;
-    border: 1px solid orange;
+    border: 1px solid black;
 }
 
 @media screen and (max-width: 550px) {

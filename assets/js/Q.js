@@ -12,8 +12,8 @@ var questions = [
     question: "String values must be enclosed ____ when being assigned to variables.",
     answers:[
     {text: "commas", correct: false},
-    {text: "curly brtackets", correct: false},
-    {text: "paraenthesis", correct: false},
+    {text: "curly brackets", correct: false},
+    {text: "parenthesis", correct: false},
     {text: "quotes", correct: true},
     ]
 },
