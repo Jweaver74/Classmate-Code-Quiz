@@ -4,9 +4,9 @@
 
 
 # Screenshot
-![alt text](assets/images/Quiz%20frist%20page.png),
-![alt text](assets/images/questions%20page.png),
-![alt text](assets/images/score%20page.png)
+![First page](assets/images/Quiz%20frist%20page.png),
+![Questions Page](assets/images/questions%20page.png),
+![Score Page](assets/images/score%20page.png)
 
 
 
