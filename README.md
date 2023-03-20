@@ -23,6 +23,9 @@ website
 
 
 ## credits
-BCS learning Assitant- working on errors that i just cant figure out.
-SMU tutor- Assisting with Javascript.
-Good friend & a Senior developer for helping along the way with the Javascript.
+BCS learning Asssistant-ask-235198
+SMU Tutor
+Simple steps Code-https://simplestepscode.com/javascript-quiz-tutorial/
+W3 Schools-https://www.w3schools.com/js/default.asp
+Geeksforgeeks-https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/
+youtube-https://www.youtube.com/watch?v=f4fB9Xg2JEY
