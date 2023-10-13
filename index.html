@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classmate Code Quiz</title>
+   <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+
+<body>
+    <header>
+        <div class="scores">
+        <a id="highscores-link">View High Scores</a>
+    </div>
+    <div id="timer" class="timer">
+        Time: 60
+    </div>
+    </header>
+
+    <section id="start-container" class="start-quiz">
+        <h1> Welcome to the Code Quiz</h1>
+        <p>
+            Try to answer the questions within the time allowed. 
+            Every wrong answer will cost you 10 seconds. Save your score using your intials.
+            The time left is your score.
+        </p>
+        <div class="controls">
+            <button id="start-btn" class="start-btn">Start Quiz</button>
+        </div>
+    </section>
+
+    <section id="question-container" class="hide">
+        <h1 id="question">Question</h1>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Option A</button>
+            <button class="btn">Option B</button>
+            <button class="btn">Option C</button>
+            <button class="btn">Option D</button>
+        </div>
+        <h2 id="check-answer" class="correct-wrong hide"></h2>
+        <div class="controls">
+            <button id="next-btn" class="next-btn hide">Next</button>
+        </div>
+    </section>
+
+    <section id="score-container" class="hide">
+        <form id="submit-form">
+            <h3 id="your-score"></h3>
+            <label id="initials-label"Enter your initials</label>
+            <input type="text" id="initials-field" max="3" placeholder="Enter your initials"/>
+            <button id="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <section id="highscores" class="highscores-container hide">
+        <div id="high-scores">
+            <h1 class="centered">Leaderboard</h1>
+            <div id="highscore"  class="highscore highscore-list"></div>
+            <div class="controls">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/Q.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    
+
+</body>
+</html>
