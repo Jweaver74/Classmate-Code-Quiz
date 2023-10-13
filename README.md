@@ -4,6 +4,7 @@
 
 
 # Screenshot
+![zoomed in](assets/images/home.png)
 ![First page](assets/images/Quiz%20frist%20page.png),
 ![Questions Page](assets/images/questions%20page.png),
 ![Score Page](assets/images/score%20page.png)
